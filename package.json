@@ -1,0 +1,49 @@
+{
+  "name": "powerbi-visuals-utils-svgutils",
+  "version": "0.1.0",
+  "description": "SVGUtils",
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Microsoft/powerbi-visuals-utils-svgutils.git"
+  },
+  "keywords": [
+    "powerbi-visuals-utils"
+  ],
+  "author": "Microsoft",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Microsoft/powerbi-visuals-utils-svgutils/issues"
+  },
+  "homepage": "https://github.com/Microsoft/powerbi-visuals-utils-svgutils#readme",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "karma start",
+    "pretest": "npm run build",
+    "lint": "tslint \"+(src|test)/**/*.ts\"",
+    "typings": "typings",
+    "typings:install": "typings install"
+  },
+  "devDependencies": {
+    "powerbi-visuals-utils-testutils": "git+https://github.com/ignatvilesov/powerbi-visuals-utils-testutils.git",
+    "@types/jasmine": "2.5.37",
+    "jasmine": "2.5.2",
+    "jasmine-jquery": "2.1.1",
+    "jquery": "3.1.1",
+    "karma": "1.3.0",
+    "karma-chrome-launcher": "2.0.0",
+    "karma-jasmine": "1.0.2",
+    "karma-typescript-preprocessor": "0.3.0",
+    "powerbi-visuals-tools": "1.2.1",
+    "tslint": "3.15.1",
+    "typescript": "1.8.10",
+    "typings": "1.5.0"
+  },
+  "dependencies": {
+    "d3": "3.5.5",
+    "powerbi-visuals-utils-typeutils": "git+https://github.com/ignatvilesov/powerbi-visuals-utils-typeutils.git"
+  }
+}
