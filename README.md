@@ -1,7 +1,7 @@
 # Microsoft Power BI visuals SVGUtils
 [![Build Status](https://travis-ci.org/Microsoft/powerbi-visuals-utils-svgutils.svg?branch=master)](https://travis-ci.org/Microsoft/powerbi-visuals-utils-svgutils) [![npm version](https://img.shields.io/npm/v/powerbi-visuals-utils-svgutils.svg)](https://www.npmjs.com/package/powerbi-visuals-utils-svgutils) [![npm](https://img.shields.io/npm/dm/powerbi-visuals-utils-svgutils.svg)](https://www.npmjs.com/package/powerbi-visuals-utils-svgutils)
 
-> SVG utility interfaces for creating powerbi custom visuals
+> SVGUtils is a set of functions and classes in order to simplify SVG manipulations for Power BI custom visuals
 
 ## Usage
 Learn how to install and use the SVGUtils in your custom visuals:
