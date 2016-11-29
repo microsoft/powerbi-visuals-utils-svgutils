@@ -62,7 +62,7 @@ This can cause a brief flicker if the browser renders the page twice: once at th
 then again immediately on the first timer callback. By flushing the timer queue at the end of the first event loop,
 you can run any zero-delay transitions immediately and avoid the flicker.
 
-These flickers are noticable on IE, and with a large number of webviews(not recommend you ever do this) on iOS.
+These flickers are noticable on IE, and with a large number of webviews (not recommend you ever do this) on iOS.
 
 ```typescript
 function flushAllD3Transitions(): void
@@ -70,8 +70,7 @@ function flushAllD3Transitions(): void
 
 ## parseTranslateTransform
 Parse the Transform string with value "translate(x,y)".
-In Chrome for the translate(position) string the delimiter
-is a comma and in IE it is a spaceso checking for both.
+The delimiter for the translate(position) string  is a comma in Chrome and a space in IE, so check for both browsers.
 
 ```typescript
 function parseTranslateTransform(scale: number): string

@@ -1,5 +1,5 @@
 # pointer
-> The ```pointer``` provides some special methods to work with pointer events.
+> The ```pointer``` module provides some special methods to work with pointer events.
 
 The ```powerbi.extensibility.utils.svg``` module provides the following functions and interfaces:
 

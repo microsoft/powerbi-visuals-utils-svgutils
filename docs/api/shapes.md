@@ -1,5 +1,5 @@
 # shapes
-> The ```scaleDetector``` provides some special methods to work with shapes.
+> The ```shapes``` module provides some special methods to work with shapes.
 
 The ```powerbi.extensibility.utils.svg``` module provides the following functions and interfaces:
 

@@ -1,5 +1,5 @@
 # cssConstants
-> The ```cssConstants``` provides some special methods to work with class selectors.
+> The ```cssConstants``` module provides some special methods to work with class selectors.
 
 The ```powerbi.extensibility.utils.svg``` module provides the following functions and interfaces:
 
