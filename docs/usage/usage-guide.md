@@ -3,8 +3,8 @@
 
 This package contains the following classes, interfaces and methods:
 
-* [cssConstants](../api/cssConstants.md) - helps to measure properties of the text
-* [manipulatation](../api/manipulatation.md) - helps to manipulate with text and strings
-* [shapes](../api/shapes.md) - helps to format number, strings and dates
-* [pointer](../api/pointer.md) - helps to format number, strings and dates
+* [cssConstants](../api/cssConstants.md) - helps to work with class selectors
+* [manipulatation](../api/manipulatation.md) - helps to manipulate with SVG transforms
+* [shapes](../api/shapes.md) - helps to manipulate with shapes
+* [pointer](../api/pointer.md) - helps to work with pointer events
 
