@@ -28,7 +28,7 @@
     "typings:install": "typings install"
   },
   "devDependencies": {
-    "powerbi-visuals-utils-testutils": "git+https://github.com/ignatvilesov/powerbi-visuals-utils-testutils.git",
+    "powerbi-visuals-utils-testutils": "0.1.0",
     "@types/jasmine": "2.5.37",
     "jasmine": "2.5.2",
     "jasmine-jquery": "2.1.1",
@@ -44,6 +44,6 @@
   },
   "dependencies": {
     "d3": "3.5.5",
-    "powerbi-visuals-utils-typeutils": "git+https://github.com/ignatvilesov/powerbi-visuals-utils-typeutils.git"
+    "powerbi-visuals-utils-typeutils": "0.1.0"
   }
 }
