@@ -7,4 +7,3 @@ This package contains the following classes, interfaces and methods:
 * [manipulation](../api/manipulatation.md) - helps to manipulate SVG transforms
 * [shapes](../api/shapes.md) - helps to manipulate shapes
 * [pointer](../api/pointer.md) - helps to work with pointer events
-

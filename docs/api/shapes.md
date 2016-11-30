@@ -3,15 +3,15 @@
 
 The ```powerbi.extensibility.utils.svg``` module provides the following functions and interfaces:
 
-* [getClosestPoint](#getClosestPoint)
+* [getClosestPoint](#getclosestpoint)
 * [equal](#equal)
-* [equalWithPrecision](#equalWithPrecision)
-* [isEmpty](#isEmpty)
-* [containsPoint](#containsPoint)
-* [isIntersecting](#isIntersecting)
+* [equalWithPrecision](#equalwithprecision)
+* [isEmpty](#isempty)
+* [containsPoint](#containspoint)
+* [isIntersecting](#isintersecting)
 * [intersect](#intersect)
 * [combine](#combine)
-* [getCentroid](#getCentroid)
+* [getCentroid](#getcentroid)
 
 ## getClosestPoint
 Return the closest point on the rect to the (x,y) point given.
@@ -77,6 +77,3 @@ Returns a center point of the rectangle
 ```typescript
 function getCentroid(rect: IRect): IPoint
 ```
-
-
-

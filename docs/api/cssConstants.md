@@ -3,8 +3,8 @@
 
 The ```powerbi.extensibility.utils.svg``` module provides the following functions and interfaces:
 
-* [ClassAndSelector](#ClassAndSelector)
-* [createClassAndSelector](#createClassAndSelector)
+* [ClassAndSelector](#classandselector)
+* [createClassAndSelector](#createclassandselector)
 
 ## ClassAndSelector
 
@@ -12,9 +12,9 @@ This interface describes common properties of the class selector.
 
 ```typescript
 interface ClassAndSelector {
-            class: string;
-            selector: string;
-        }
+    class: string;
+    selector: string;
+}
 ```
 
 ## createClassAndSelector
@@ -32,8 +32,6 @@ import createClassAndSelector = powerbi.extensibility.utils.svg.createClassAndSe
 
 let divSelector: ClassAndSelector = createClassAndSelector('sample-block');
 
-
-divSelector.selector === '.sample-block' // returns: True
-divSelector.class === 'sample-block' // returns: True
-
+divSelector.selector === '.sample-block' // returns: true
+divSelector.class === 'sample-block' // returns: true
 ```

@@ -4,14 +4,14 @@
 The ```powerbi.extensibility.utils.svg``` module provides the following functions and interfaces:
 
 * [translate](#translate)
-* [translateXWithPixels](#translateXWithPixels)
-* [translateWithPixels](#translateWithPixels)
-* [translateAndRotate](#translateAndRotate)
+* [translateXWithPixels](#translatexwithpixels)
+* [translateWithPixels](#translatewithpixels)
+* [translateAndRotate](#translateandrotate)
 * [scale](#scale)
-* [flushAllD3Transitions](#flushAllD3Transitions)
-* [parseTranslateTransform](#parseTranslateTransform)
-* [createArrow](#createArrow)
-* [getTransformScaleRatios](#getTransformScaleRatios)
+* [flushAllD3Transitions](#flushalld3transitions)
+* [parseTranslateTransform](#parsetranslatetransform)
+* [createArrow](#createarrow)
+* [getTransformScaleRatios](#gettransformscaleratios)
 
 ## translate
 Creates a translate string for use with the SVG transform call.
@@ -90,4 +90,3 @@ Use the ratio of the scaled bounding rect and the SVG DOM bounding box to get th
 ```typescript
 function getTransformScaleRatios(svgElement: SVGSVGElement): Point
 ```
-

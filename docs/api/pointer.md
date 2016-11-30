@@ -3,7 +3,7 @@
 
 The ```powerbi.extensibility.utils.svg``` module provides the following functions and interfaces:
 
-* [getCoordinates](#getCoordinates)
+* [getCoordinates](#getcoordinates)
 
 ## getCoordinates
 This function measures the width of the text with the given SVG text properties.
