@@ -1,6 +1,6 @@
 {
   "name": "powerbi-visuals-utils-svgutils",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "SVGUtils",
   "main": "lib/index.js",
   "repository": {
@@ -28,7 +28,7 @@
     "typings:install": "typings install"
   },
   "devDependencies": {
-    "powerbi-visuals-utils-testutils": "0.1.0",
+    "powerbi-visuals-utils-testutils": "^0.2.0",
     "@types/jasmine": "2.5.37",
     "jasmine": "2.5.2",
     "jasmine-jquery": "2.1.1",
@@ -44,6 +44,6 @@
   },
   "dependencies": {
     "d3": "3.5.5",
-    "powerbi-visuals-utils-typeutils": "0.1.0"
+    "powerbi-visuals-utils-typeutils": "^0.2.0"
   }
 }
