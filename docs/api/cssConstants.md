@@ -1,7 +1,7 @@
-# cssConstants
-> The ```cssConstants``` module provides some special methods to work with class selectors.
+# CssConstants
+> The ```CssConstants``` module provides the special function and interface to work with class selectors.
 
-The ```powerbi.extensibility.utils.svg``` module provides the following functions and interfaces:
+The ```powerbi.extensibility.utils.svg.CssConstants``` module provides the following function and interface:
 
 * [ClassAndSelector](#classandselector)
 * [createClassAndSelector](#createclassandselector)
@@ -18,7 +18,7 @@ interface ClassAndSelector {
 ```
 
 ## createClassAndSelector
-This function measures the width of the text with the given SVG text properties.
+This function creates an instance of ClassAndSelector with the given name of the class.
 
 ```typescript
 function createClassAndSelector(className: string): ClassAndSelector;
@@ -27,11 +27,13 @@ function createClassAndSelector(className: string): ClassAndSelector;
 ### Example
 
 ```typescript
-import ClassAndSelector = powerbi.extensibility.utils.svg.ClassAndSelector;
-import createClassAndSelector = powerbi.extensibility.utils.svg.createClassAndSelector;
+import ClassAndSelector = powerbi.extensibility.utils.svg.CssConstants.ClassAndSelector;
+import createClassAndSelector = powerbi.extensibility.utils.svg.CssConstants.createClassAndSelector;
 
 let divSelector: ClassAndSelector = createClassAndSelector('sample-block');
 
 divSelector.selector === '.sample-block' // returns: true
 divSelector.class === 'sample-block' // returns: true
 ```
+
+You can take a look at the example code of the custom visual [here](https://github.com/Microsoft/powerbi-visuals-sankey/blob/4d544ea145b4e15006083a3610dfead3da5f61a4/src/visual.ts#L92).
