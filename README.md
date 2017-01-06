@@ -1,5 +1,5 @@
 # Microsoft Power BI visuals SVGUtils
-[![Build Status](https://travis-ci.org/Microsoft/powerbi-visuals-utils-svgutils.svg?branch=master)](https://travis-ci.org/Microsoft/powerbi-visuals-utils-svgutils) [![npm version](https://img.shields.io/npm/v/powerbi-visuals-utils-svgutils.svg)](https://www.npmjs.com/package/powerbi-visuals-utils-svgutils) [![npm](https://img.shields.io/npm/dm/powerbi-visuals-utils-svgutils.svg)](https://www.npmjs.com/package/powerbi-visuals-utils-svgutils)
+[![Build Status](https://travis-ci.org/Microsoft/powerbi-visuals-utils-svgutils.svg?branch=master)](https://travis-ci.org/Microsoft/powerbi-visuals-utils-svgutils) [![Coverage Status](https://coveralls.io/repos/github/Microsoft/powerbi-visuals-utils-svgutils/badge.svg?branch=master)](https://coveralls.io/github/Microsoft/powerbi-visuals-utils-svgutils?branch=master) [![npm version](https://img.shields.io/npm/v/powerbi-visuals-utils-svgutils.svg)](https://www.npmjs.com/package/powerbi-visuals-utils-svgutils) [![npm](https://img.shields.io/npm/dm/powerbi-visuals-utils-svgutils.svg)](https://www.npmjs.com/package/powerbi-visuals-utils-svgutils)
 
 > SVGUtils is a set of functions and classes in order to simplify SVG manipulations for Power BI custom visuals
 
