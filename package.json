@@ -1,6 +1,6 @@
 {
   "name": "powerbi-visuals-utils-svgutils",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "SVGUtils",
   "main": "lib/index.js",
   "repository": {
