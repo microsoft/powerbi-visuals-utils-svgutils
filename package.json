@@ -20,9 +20,10 @@
     "lib"
   ],
   "scripts": {
+    "build:map": "tsc --sourceMap",
     "build": "tsc",
     "test": "karma start",
-    "pretest": "npm run build",
+    "pretest": "npm run build:map",
     "lint": "tslint \"+(src|test)/**/*.ts\"",
     "typings": "typings",
     "typings:install": "typings install"
@@ -39,7 +40,7 @@
     "karma-typescript-preprocessor": "0.3.0",
     "powerbi-visuals-tools": "1.2.1",
     "tslint": "3.15.1",
-    "typescript": "1.8.10",
+    "typescript": "2.1.4",
     "typings": "1.5.0",
     "coveralls": "2.11.15",
     "karma-coverage": "1.1.1",

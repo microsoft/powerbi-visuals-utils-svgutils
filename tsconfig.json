@@ -4,8 +4,7 @@
         "experimentalDecorators": true,
         "target": "ES5",
         "declaration": true,
-        "outFile": "./lib/index.js",
-        "sourceMap": true
+        "outFile": "./lib/index.js"
     },
     "files": [
         "typings/index.d.ts",
