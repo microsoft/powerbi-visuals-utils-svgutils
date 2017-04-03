@@ -2,7 +2,7 @@
  *  Power BI Visualizations
  *
  *  Copyright (c) Microsoft Corporation
- *  All rights reserved. 
+ *  All rights reserved.
  *  MIT License
  *
  *  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -11,14 +11,14 @@
  *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  *  copies of the Software, and to permit persons to whom the Software is
  *  furnished to do so, subject to the following conditions:
- *   
- *  The above copyright notice and this permission notice shall be included in 
+ *
+ *  The above copyright notice and this permission notice shall be included in
  *  all copies or substantial portions of the Software.
- *   
- *  THE SOFTWARE IS PROVIDED *AS IS*, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR 
- *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
- *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE 
- *  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER 
+ *
+ *  THE SOFTWARE IS PROVIDED *AS IS*, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ *  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
  *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  *  THE SOFTWARE.
@@ -27,10 +27,10 @@
 module powerbi.extensibility.utils.svg {
     import AnimationOptions = powerbi.extensibility.utils.svg.animationOptions.AnimationOptions;
 
-    /** 
-     * Very small values, when stringified, may be converted to scientific notation and cause a temporarily 
+    /**
+     * Very small values, when stringified, may be converted to scientific notation and cause a temporarily
      * invalid attribute or style property value.
-     * For example, the number 0.0000001 is converted to the string "1e-7". 
+     * For example, the number 0.0000001 is converted to the string "1e-7".
      * This is particularly noticeable when interpolating opacity values.
      * To avoid scientific notation, start or end the transition at 1e-6,
      * which is the smallest value that is not stringified in exponential notation.
@@ -59,7 +59,7 @@ module powerbi.extensibility.utils.svg {
      * Creates a translate + rotate string for use with the SVG transform call.
      */
     export function translateAndRotate(x: number, y: number, px: number, py: number, angle: number): string {
-        return "transform", "translate("
+        return "translate("
             + x + "," + y + ")"
             + " rotate(" + angle + "," + px + "," + py + ")";
     }
@@ -75,7 +75,7 @@ module powerbi.extensibility.utils.svg {
      * Creates a translate + scale string for use with the SVG transform call.
      */
     export function translateAndScale(x: number, y: number, ratio: number): string {
-        return "transform", "translate("
+        return "translate("
             + x + "," + y + ")"
             + " scale(" + ratio + ")";
     }
@@ -89,11 +89,11 @@ module powerbi.extensibility.utils.svg {
 
     /**
      * Forces all D3 transitions to complete.
-     * Normally, zero-delay transitions are executed after an instantaneous delay (<10ms). 
-     * This can cause a brief flicker if the browser renders the page twice: once at the end of the first event loop, 
+     * Normally, zero-delay transitions are executed after an instantaneous delay (<10ms).
+     * This can cause a brief flicker if the browser renders the page twice: once at the end of the first event loop,
      * then again immediately on the first timer callback. By flushing the timer queue at the end of the first event loop,
      * you can run any zero-delay transitions immediately and avoid the flicker.
-     * 
+     *
      * These flickers are noticable on IE, and with a large number of webviews(not recommend you ever do this) on iOS.
      */
     export function flushAllD3Transitions() {
@@ -141,7 +141,7 @@ module powerbi.extensibility.utils.svg {
 
     /**
      * Parse the Transform string with value "translate(x,y)".
-     * In Chrome for the translate(position) string the delimiter 
+     * In Chrome for the translate(position) string the delimiter
      * is a comma and in IE it is a spaceso checking for both.
      */
     export function parseTranslateTransform(input: string): { x: string; y: string } {

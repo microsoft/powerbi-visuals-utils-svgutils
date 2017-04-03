@@ -30,14 +30,14 @@ module powerbi.extensibility.utils.svg {
      */
     export module CssConstants {
         export interface ClassAndSelector {
-            class: string;
-            selector: string;
+            className: string;
+            selectorName: string;
         }
 
         export function createClassAndSelector(className: string): ClassAndSelector {
             return {
-                class: className,
-                selector: "." + className,
+                className: className,
+                selectorName: "." + className,
             };
         }
 
