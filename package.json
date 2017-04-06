@@ -1,6 +1,6 @@
 {
   "name": "powerbi-visuals-utils-svgutils",
-  "version": "0.2.2",
+  "version": "1.0.0",
   "description": "SVGUtils",
   "main": "lib/index.js",
   "repository": {
@@ -20,10 +20,11 @@
     "lib"
   ],
   "scripts": {
+    "build:map": "tsc --sourceMap",
     "build": "tsc",
     "test": "karma start",
-    "pretest": "npm run build",
-    "lint": "tslint \"+(src|test)/**/*.ts\"",
+    "pretest": "npm run build:map",
+    "lint": "tslint -r \"node_modules/tslint-microsoft-contrib\"  \"+(src|test)/**/*.ts\"",
     "typings": "typings",
     "typings:install": "typings install"
   },
@@ -38,8 +39,9 @@
     "karma-jasmine": "1.0.2",
     "karma-typescript-preprocessor": "0.3.0",
     "powerbi-visuals-tools": "1.2.1",
-    "tslint": "3.15.1",
-    "typescript": "1.8.10",
+    "tslint": "4.4.2",
+    "tslint-microsoft-contrib": "^4.0.1",
+    "typescript": "2.1.4",
     "typings": "1.5.0",
     "coveralls": "2.11.15",
     "karma-coverage": "1.1.1",
