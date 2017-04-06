@@ -109,8 +109,8 @@ declare module powerbi.extensibility.utils.svg {
      */
     module CssConstants {
         interface ClassAndSelector {
-            class: string;
-            selector: string;
+            className: string;
+            selectorName: string;
         }
         function createClassAndSelector(className: string): ClassAndSelector;
         const styleAttribute = "style";
