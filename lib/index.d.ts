@@ -1,3 +1,4 @@
+/// <reference types="d3" />
 declare module powerbi.extensibility.utils.svg {
     interface IMargin {
         top: number;
