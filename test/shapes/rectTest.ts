@@ -23,13 +23,23 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  *  THE SOFTWARE.
  */
+// / <reference path="../_references.ts"/>
 
-/// <reference path="../_references.ts"/>
-
-module powerbi.extensibility.utils.svg.test {
+// module powerbi.extensibility.utils.svg.test {
+    /*
     import Shapes = powerbi.extensibility.utils.svg.shapes;
     import IRect = powerbi.extensibility.utils.svg.IRect;
-    import Rect = powerbi.extensibility.utils.svg.shapes.Rect;
+    import Rect = powerbi.extensibility.utils.svg.Rect;
+    */
+
+    import {shapes} from "../../src/shapes/shapesInterfaces";
+    import {IRect} from "../../src/shapes/rect/irect";
+    import {Rect} from "../../src/shapes/shapes";
+
+
+   // import Shapes = powerbi.extensibility.utils.svg.shapes;
+   // import IRect = powerbi.extensibility.utils.svg.IRect;
+   // import Rect = powerbi.extensibility.utils.svg.Rect;
 
     describe("Rect tests", () => {
 
@@ -151,7 +161,7 @@ module powerbi.extensibility.utils.svg.test {
 
         it("Set size", () => {
             rectA = { left: 0, top: 0, width: 200, height: 200 };
-            let newSize: Shapes.ISize = { width: 150, height: 170 };
+            let newSize: shapes.ISize = { width: 150, height: 170 };
             Rect.setSize(rectA, newSize);
             expect(rectA.width).toBe(150);
             expect(rectA.height).toBe(170);
@@ -265,7 +275,7 @@ module powerbi.extensibility.utils.svg.test {
 
         it("Rect inflate", () => {
             rectA = { left: 70, top: 110, width: 130, height: 270 };
-            let thickness: Shapes.IThickness = { left: 30, top: 20, right: 50, bottom: 40 };
+            let thickness: shapes.IThickness = { left: 30, top: 20, right: 50, bottom: 40 };
             rectB = Rect.inflate(rectA, thickness);
             expect(rectB.left).toBe(40);
             expect(rectB.top).toBe(90);
@@ -275,7 +285,7 @@ module powerbi.extensibility.utils.svg.test {
 
         it("Rect inflate - Zero Values", () => {
             rectA = { left: 70, top: 110, width: 130, height: 270 };
-            let thickness: Shapes.IThickness = { left: 0, top: 0, right: 0, bottom: 0 };
+            let thickness: shapes.IThickness = { left: 0, top: 0, right: 0, bottom: 0 };
             rectB = Rect.inflate(rectA, thickness);
             expect(rectB.left).toBe(70);
             expect(rectB.top).toBe(110);
@@ -285,7 +295,7 @@ module powerbi.extensibility.utils.svg.test {
 
         it("Rect deflate", () => {
             rectA = { left: 70, top: 110, width: 130, height: 270 };
-            let thickness: Shapes.IThickness = { left: 30, top: 20, right: 50, bottom: 40 };
+            let thickness: shapes.IThickness = { left: 30, top: 20, right: 50, bottom: 40 };
             rectB = Rect.deflate(rectA, thickness);
             expect(rectB.left).toBe(100);
             expect(rectB.top).toBe(130);
@@ -295,7 +305,7 @@ module powerbi.extensibility.utils.svg.test {
 
         it("Rect deflate - Zero Values", () => {
             rectA = { left: 70, top: 110, width: 130, height: 270 };
-            let thickness: Shapes.IThickness = { left: 0, top: 0, right: 0, bottom: 0 };
+            let thickness: shapes.IThickness = { left: 0, top: 0, right: 0, bottom: 0 };
             rectB = Rect.deflate(rectA, thickness);
             expect(rectB.left).toBe(70);
             expect(rectB.top).toBe(110);
@@ -341,59 +351,59 @@ module powerbi.extensibility.utils.svg.test {
 
         it("Contains Point - Return true", () => {
             rectA = { left: 70, top: 110, width: 130, height: 270 };
-            let newPoint: Shapes.IPoint = { x: 100, y: 140 };
-            let isContains = Shapes.Rect.containsPoint(rectA, newPoint);
+            let newPoint: shapes.IPoint = { x: 100, y: 140 };
+            let isContains = Rect.containsPoint(rectA, newPoint);
             expect(isContains).toBe(true);
         });
 
         it("Contains Point check floating point rounding precision", () => {
             rectA = { left: 70, top: 110, width: 130, height: 270 };
-            let inPoint: Shapes.IPoint = { x: 70.00000001, y: 140 };
-            let outPoint: Shapes.IPoint = { x: 69.9999999, y: 140 };
-            let containsInner = Shapes.Rect.containsPoint(rectA, inPoint);
-            let containsOuter = Shapes.Rect.containsPoint(rectA, outPoint);
+            let inPoint: shapes.IPoint = { x: 70.00000001, y: 140 };
+            let outPoint: shapes.IPoint = { x: 69.9999999, y: 140 };
+            let containsInner = Rect.containsPoint(rectA, inPoint);
+            let containsOuter = Rect.containsPoint(rectA, outPoint);
             expect(containsInner).toBe(true);
             expect(containsOuter).toBe(false);
         });
 
         it("Contains Point - Return false", () => {
             rectA = { left: 70, top: 110, width: 130, height: 270 };
-            let newPoint: Shapes.IPoint = { x: 220, y: 170 };
-            let isContains = Shapes.Rect.containsPoint(rectA, newPoint);
+            let newPoint: shapes.IPoint = { x: 220, y: 170 };
+            let isContains = Rect.containsPoint(rectA, newPoint);
             expect(isContains).toBe(false);
         });
 
         it("Contains Point - null", () => {
             rectA = { left: 70, top: 110, width: 130, height: 270 };
-            let isContains = Shapes.Rect.containsPoint(rectA, null);
+            let isContains = Rect.containsPoint(rectA, null);
             expect(isContains).toBe(false);
         });
 
         it("Is Intersecting - Return true", () => {
             rectA = { left: 70, top: 110, width: 130, height: 270 };
             rectB = { left: 70, top: 150, width: 130, height: 320 };
-            let isIntersecting = Shapes.Rect.isIntersecting(rectA, rectB);
+            let isIntersecting = Rect.isIntersecting(rectA, rectB);
             expect(isIntersecting).toBe(true);
         });
 
         it("Is Intersecting - Return false", () => {
             rectA = { left: 70, top: 110, width: 130, height: 270 };
             rectB = { left: 30, top: 20, width: 20, height: 20 };
-            let isIntersecting = Shapes.Rect.isIntersecting(rectA, rectB);
+            let isIntersecting = Rect.isIntersecting(rectA, rectB);
             expect(isIntersecting).toBe(false);
         });
 
         it("Is Intersecting - first null", () => {
             rectA = { left: 70, top: 110, width: 130, height: 270 };
             rectB = null;
-            let isIntersecting = Shapes.Rect.isIntersecting(rectA, rectB);
+            let isIntersecting = Rect.isIntersecting(rectA, rectB);
             expect(isIntersecting).toBe(false);
         });
 
         it("Is Intersecting - second null", () => {
             rectA = null;
             rectB = { left: 70, top: 110, width: 130, height: 270 };
-            let isIntersecting = Shapes.Rect.isIntersecting(rectA, rectB);
+            let isIntersecting = Rect.isIntersecting(rectA, rectB);
             expect(isIntersecting).toBe(false);
         });
 
@@ -472,4 +482,4 @@ module powerbi.extensibility.utils.svg.test {
             });
         });
     });
-}
+// }

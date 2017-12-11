@@ -24,7 +24,7 @@
  *  THE SOFTWARE.
  */
 
-module powerbi.extensibility.utils.svg.touch {
+// module powerbi.extensibility.utils.svg.touch {
     export class Point {
         public x: number;
         public y: number;
@@ -69,4 +69,4 @@ module powerbi.extensibility.utils.svg.touch {
             return !(rect !== undefined && rect.width >= 0 && rect.height >= 0);
         }
     }
-}
+// }

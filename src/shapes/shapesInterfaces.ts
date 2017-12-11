@@ -24,7 +24,7 @@
  *  THE SOFTWARE.
  */
 
-module powerbi.extensibility.utils.svg {
+// module powerbi.extensibility.utils.svg {
     export module shapes {
         export interface IPolygon {
             absoluteCentroid: IPoint;
@@ -60,4 +60,4 @@ module powerbi.extensibility.utils.svg {
             bottom: number;
         }
     }
-}
+// }

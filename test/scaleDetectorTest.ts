@@ -24,54 +24,48 @@
  *  THE SOFTWARE.
  */
 
-/// <reference path="_references.ts" />
+import { select, Selection } from "d3-selection";
+import { SVGScaleDetector } from "../src/scaleDetector";
+import * as JQuery from "jquery";
 
-module powerbi.extensibility.utils.svg.test {
-    // d3
-    import Selection = d3.Selection;
+import * as TestUtils from "powerbi-visuals-utils-testutils";
+import { testDom } from "powerbi-visuals-utils-testutils";
 
-    // powerbi.extensibility.utils.svg
-    import SVGScaleDetector = powerbi.extensibility.utils.svg.SVGScaleDetector;
+describe("SVGScaleDetector", () => {
+    let scaleDetector: SVGScaleDetector;
+    let element: JQuery;
+    let svg: Selection<any, any, any, any>;
 
-    // powerbi.extensibility.utils.test
-    import testDom = powerbi.extensibility.utils.test.helpers.testDom;
+    const tolerance = 4;  // decimal points of precision
 
-    describe("SVGScaleDetector", () => {
-        let scaleDetector: SVGScaleDetector;
-        let element: JQuery;
-        let svg: Selection<any>;
-
-        const tolerance = 4;  // decimal points of precision
-
-        beforeEach(() => {
-            element = testDom("100", "100");
-            svg = d3.select(element.get(0)).append("svg");
-        });
-
-        it("no scale", () => {
-            scaleDetector = new SVGScaleDetector(svg);
-
-            let scale = scaleDetector.getScale();
-            expect(scale.x).toBeCloseTo(1.0, tolerance);
-            expect(scale.y).toBeCloseTo(1.0, tolerance);
-        });
-
-        it("tiny scale", () => {
-            element.css("transform", "scale(0.0001)");
-            scaleDetector = new SVGScaleDetector(svg);
-
-            let scale = scaleDetector.getScale();
-            expect(scale.x).toBeCloseTo(0.0001, tolerance);
-            expect(scale.y).toBeCloseTo(0.0001, tolerance);
-        });
-
-        it("huge scale", () => {
-            element.css("transform", "scale(1000.0)");
-            scaleDetector = new SVGScaleDetector(svg);
-
-            let scale = scaleDetector.getScale();
-            expect(scale.x).toBeCloseTo(1000.0, tolerance);
-            expect(scale.y).toBeCloseTo(1000.0, tolerance);
-        });
+    beforeEach(() => {
+        element = testDom("100", "100");
+        svg = select(element.get(0)).append("svg");
     });
-}
+
+    it("no scale", () => {
+        scaleDetector = new SVGScaleDetector(svg);
+
+        let scale = scaleDetector.getScale();
+        expect(scale.x).toBeCloseTo(1.0, tolerance);
+        expect(scale.y).toBeCloseTo(1.0, tolerance);
+    });
+
+    it("tiny scale", () => {
+        element.css("transform", "scale(0.0001)");
+        scaleDetector = new SVGScaleDetector(svg);
+
+        let scale = scaleDetector.getScale();
+        expect(scale.x).toBeCloseTo(0.0001, tolerance);
+        expect(scale.y).toBeCloseTo(0.0001, tolerance);
+    });
+
+    it("huge scale", () => {
+        element.css("transform", "scale(1000.0)");
+        scaleDetector = new SVGScaleDetector(svg);
+
+        let scale = scaleDetector.getScale();
+        expect(scale.x).toBeCloseTo(1000.0, tolerance);
+        expect(scale.y).toBeCloseTo(1000.0, tolerance);
+    });
+});

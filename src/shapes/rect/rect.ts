@@ -24,7 +24,8 @@
  *  THE SOFTWARE.
  */
 
-module powerbi.extensibility.utils.svg {
+// module powerbi.extensibility.utils.svg {
+import {IRect} from "./irect";
     export class Rect implements IRect {
         // Fields
         public left: number;
@@ -40,4 +41,4 @@ module powerbi.extensibility.utils.svg {
             this.height = height || 0;
         }
     }
-}
+// }

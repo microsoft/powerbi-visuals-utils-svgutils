@@ -23,38 +23,39 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  *  THE SOFTWARE.
  */
+import { select, Selection } from "d3-selection";
 
-module powerbi.extensibility.utils.svg {
-    export class SVGScaleDetector {
-        private scaleDetectorElement: SVGRectElement;
+import { Point } from "./shapes/point";
 
-        constructor(svgElement: d3.Selection<any>) {
-            this.scaleDetectorElement = <SVGRectElement>svgElement
-                .append("rect") // Using a <rect> which should have a reliable bounding box across browser implementations.
-                .classed("scale-detector", true)
-                .attr({
-                    width: 1,
-                    height: 1,
-                    "stroke-width": "0px",
-                    fill: "none",
-                })
-                .node();
-        }
 
-        public getScale(): Point {
-            let scaledRect = this.scaleDetectorElement.getBoundingClientRect();
-            let domRect = this.scaleDetectorElement.getBBox();
-            if (domRect.height > 0 && domRect.width > 0) {
-                return {
-                    x: scaledRect.width / domRect.width,
-                    y: scaledRect.height / domRect.height
-                };
-            }
 
+export class SVGScaleDetector {
+    private scaleDetectorElement: SVGRectElement;
+
+    constructor(svgElement: Selection<SVGRectElement, any, any, any>) {
+        this.scaleDetectorElement = <SVGRectElement>svgElement
+            .append("rect") // Using a <rect> which should have a reliable bounding box across browser implementations.
+            .classed("scale-detector", true)
+            .attr("width", 1)
+            .attr("height", 1)
+            .attr("stroke-width", "0px")
+            .attr("fill", "none")
+            .node();
+    }
+
+    public getScale(): Point {
+        let scaledRect = this.scaleDetectorElement.getBoundingClientRect();
+        let domRect = this.scaleDetectorElement.getBBox();
+        if (domRect.height > 0 && domRect.width > 0) {
             return {
-                x: 1,
-                y: 1
+                x: scaledRect.width / domRect.width,
+                y: scaledRect.height / domRect.height
             };
         }
+
+        return {
+            x: 1,
+            y: 1
+        };
     }
 }

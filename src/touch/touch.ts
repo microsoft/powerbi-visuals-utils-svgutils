@@ -24,7 +24,7 @@
  *  THE SOFTWARE.
  */
 
-module powerbi.extensibility.utils.svg.touch {
+// module powerbi.extensibility.utils.svg.touch {
     export function touchStartEventName(): string {
         let eventName: string = "touchstart";
 
@@ -62,4 +62,4 @@ module powerbi.extensibility.utils.svg.touch {
         let eventName = touchStartEventName();
         return eventName === "pointerdown" || eventName === "MSPointerDown";
     }
-}
+// }

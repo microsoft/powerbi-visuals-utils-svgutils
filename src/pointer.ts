@@ -23,9 +23,10 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  *  THE SOFTWARE.
  */
+import {select, Selection, BaseEvent, event, touches} from "d3-selection";
+import {drag} from "d3-drag";
 
-module powerbi.extensibility.utils.svg {
-    export function getCoordinates(rootNode: Element, isPointerEvent: boolean): number[] {
+    export function getCoordinates(rootNode: HTMLElement, isPointerEvent: boolean): number[] {
         let coordinates: number[];
 
         if (isPointerEvent) {
@@ -35,13 +36,13 @@ module powerbi.extensibility.utils.svg {
             // coordinates = d3.mouse(rootNode);
 
             // copied from d3_eventSource (which is not exposed)
-            let e = <MouseEvent>d3.event, s;
-            while (s = (<d3.BaseEvent>e).sourceEvent) e = s;
+            let e = <MouseEvent>event, s;
+            while (s = (<BaseEvent>e).sourceEvent) e = s;
             let rect = rootNode.getBoundingClientRect();
             coordinates = [e.clientX - rect.left - rootNode.clientLeft, e.clientY - rect.top - rootNode.clientTop];
         }
         else {
-            let touchCoordinates = d3.touches(rootNode);
+            let touchCoordinates = touches(rootNode);
             if (touchCoordinates && touchCoordinates.length > 0) {
                 coordinates = touchCoordinates[0];
             }
@@ -49,4 +50,3 @@ module powerbi.extensibility.utils.svg {
 
         return coordinates;
     }
-}

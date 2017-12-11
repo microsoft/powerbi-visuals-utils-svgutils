@@ -24,7 +24,8 @@
  *  THE SOFTWARE.
  */
 
-module powerbi.extensibility.utils.svg {
+// module powerbi.extensibility.utils.svg {
+// module SVGUtils {
     /**
      * CSS constants.
      */
@@ -153,4 +154,4 @@ module powerbi.extensibility.utils.svg {
 
         webkitTransform: string;
     }
-}
+// }
