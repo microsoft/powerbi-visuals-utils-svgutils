@@ -62,7 +62,7 @@
   "dependencies": {
     "d3-drag": "^1.2.1",
     "d3-selection": "^1.2.0",
-    "powerbi-visuals-utils-testutils": "git+https://github.com/uve/powerbi-visuals-utils-testutils.git",
+    "powerbi-visuals-utils-testutils": "git://github.com/vtkalek/powerbi-visuals-utils-testutils.git#05f01723f3e317ffaf23508830eeb7309aa9e573",
     "powerbi-visuals-utils-typeutils": "^1.1.0"
   }
 }
