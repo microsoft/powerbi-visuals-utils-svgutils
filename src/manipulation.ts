@@ -24,8 +24,14 @@
  *  THE SOFTWARE.
  */
 
-module powerbi.extensibility.utils.svg {
-    import AnimationOptions = powerbi.extensibility.utils.svg.animationOptions.AnimationOptions;
+
+import {timerFlush} from "d3-timer";
+import {AnimationOptions} from "./animation/animationOptions";
+import {Point} from "./shapes/point";
+
+// module powerbi.extensibility.utils.svg {
+
+    // import AnimationOptions = powerbi.extensibility.utils.svg.animationOptions.AnimationOptions;
 
     /**
      * Very small values, when stringified, may be converted to scientific notation and cause a temporarily
@@ -99,7 +105,7 @@ module powerbi.extensibility.utils.svg {
     export function flushAllD3Transitions() {
         let now = Date.now;
         Date.now = function () { return Infinity; };
-        d3.timer.flush();
+        timerFlush();
         Date.now = now;
     }
 
@@ -205,4 +211,4 @@ module powerbi.extensibility.utils.svg {
         }
         return { x: 1, y: 1 };
     }
-}
+// }

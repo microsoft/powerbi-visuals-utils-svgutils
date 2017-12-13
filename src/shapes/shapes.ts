@@ -24,10 +24,17 @@
  *  THE SOFTWARE.
  */
 
-module powerbi.extensibility.utils.svg {
-    import Double = powerbi.extensibility.utils.type.Double;
+// module powerbi.extensibility.utils.svg {
 
-    export module shapes {
+    import Double = powerbi.extensibility.utils.type.Double;
+    import {IRect} from "./rect/irect";
+
+    import {shapes} from "./shapesInterfaces";
+
+    import IPoint = shapes.IPoint;
+    import ISize = shapes.ISize;
+    import IThickness = shapes.IThickness;
+
         export module Rect {
 
             export function getOffset(rect: IRect): IPoint {
@@ -229,5 +236,5 @@ module powerbi.extensibility.utils.svg {
                 };
             }
         }
-    }
-}
+   // }
+// }

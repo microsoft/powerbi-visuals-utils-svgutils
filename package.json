@@ -1,14 +1,14 @@
 {
   "name": "powerbi-visuals-utils-svgutils",
-  "version": "1.1.0",
-  "description": "SVGUtils",
+  "version": "2.0.0",
+  "description": "powerbi-visuals-utils-svgutils",
   "main": "lib/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Microsoft/powerbi-visuals-utils-svgutils.git"
   },
   "keywords": [
-    "powerbi-visuals-utils"
+    "powerbi-visuals-utils-svgutils"
   ],
   "author": "Microsoft",
   "license": "MIT",
@@ -16,21 +16,28 @@
     "url": "https://github.com/Microsoft/powerbi-visuals-utils-svgutils/issues"
   },
   "homepage": "https://github.com/Microsoft/powerbi-visuals-utils-svgutils#readme",
-  "files": [
-    "lib"
-  ],
+  "directories": {
+    "lib": "lib"
+  },
   "scripts": {
-    "build:map": "tsc --sourceMap",
     "build": "tsc",
+    "build:map": "tsc --sourceMap",
     "test": "karma start",
-    "pretest": "npm run build:map",
+    "pretest": "npm run lint",
     "lint": "tslint -r \"node_modules/tslint-microsoft-contrib\"  \"+(src|test)/**/*.ts\""
   },
   "devDependencies": {
-    "@types/d3": "3.5.38",
-    "@types/jasmine": "2.5.51",
-    "@types/jquery": "2.0.41",
-    "coveralls": "2.13.1",
+    "@types/d3-selection": "^1.2.0",
+    "@types/d3-timer": "^1.0.6",
+    "@types/jasmine": "^2.8.2",
+    "@types/jasmine-jquery": "^1.5.32",
+    "@types/jquery": "^3.2.1",
+    "@types/karma": "^1.7.2",
+    "@types/lodash": "^4.14.86",
+    "@types/node": "^8.0.56",
+    "@types/webpack": "^3.8.1",
+    "chalk": "^2.1.0",
+    "coveralls": "2.11.15",
     "jasmine": "2.6.0",
     "jasmine-jquery": "2.1.1",
     "jquery": "3.2.1",
@@ -41,14 +48,21 @@
     "karma-remap-istanbul": "0.6.0",
     "karma-sourcemap-loader": "0.3.7",
     "karma-typescript-preprocessor": "0.3.1",
-    "powerbi-visuals-tools": "1.6.6",
-    "powerbi-visuals-utils-testutils": "^1.0.0",
-    "tslint": "5.4.3",
-    "tslint-microsoft-contrib": "5.0.0",
-    "typescript": "2.1.4"
+    "karma-webpack": "^2.0.6",
+    "powerbi-visuals-tools": "^1.9.0",
+    "script-loader": "^0.7.2",
+    "ts-loader": "^3.1.1",
+    "ts-node": "^3.3.0",
+    "tslint": "4.4.2",
+    "tslint-microsoft-contrib": "^4.0.1",
+    "typescript": "^2.5.3",
+    "webpack": "^3.8.1",
+    "webpack-node-externals": "^1.6.0"
   },
   "dependencies": {
-    "d3": "3.5.5",
-    "powerbi-visuals-utils-typeutils": "1.1.0"
+    "d3-drag": "^1.2.1",
+    "d3-selection": "^1.2.0",
+    "powerbi-visuals-utils-testutils": "git://github.com/Microsoft/powerbi-visuals-utils-testutils.git#c8720825bef1f50acfe4e0e789b1dde889f997c4",
+    "powerbi-visuals-utils-typeutils": "^1.1.0"
   }
 }
