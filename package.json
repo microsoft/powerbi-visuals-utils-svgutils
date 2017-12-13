@@ -8,7 +8,7 @@
     "url": "git+https://github.com/Microsoft/powerbi-visuals-utils-svgutils.git"
   },
   "keywords": [
-    "powerbi-visuals-svgutils"
+    "powerbi-visuals-utils-svgutils"
   ],
   "author": "Microsoft",
   "license": "MIT",
@@ -62,7 +62,7 @@
   "dependencies": {
     "d3-drag": "^1.2.1",
     "d3-selection": "^1.2.0",
-    "powerbi-visuals-utils-testutils": "git://github.com/vtkalek/powerbi-visuals-utils-testutils.git#05f01723f3e317ffaf23508830eeb7309aa9e573",
+    "powerbi-visuals-utils-testutils": "git://github.com/Microsoft/powerbi-visuals-utils-testutils.git#c8720825bef1f50acfe4e0e789b1dde889f997c4",
     "powerbi-visuals-utils-typeutils": "^1.1.0"
   }
 }
