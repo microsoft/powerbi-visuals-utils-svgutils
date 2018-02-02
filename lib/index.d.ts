@@ -58,6 +58,70 @@ declare module powerbi.extensibility.utils.svg {
 }
 declare module powerbi.extensibility.utils.svg {
     module shapes {
+        class Polygon {
+            private _absoluteCentroid;
+            private _absoluteBoundingRect;
+            polygonPoints: IPoint[];
+            pixelBoundingRect: Rect;
+            constructor(absolutePoints: Float64Array);
+            absoluteCentroid(): IPoint;
+            absoluteBoundingRect(): Rect;
+            /**
+             * Check if label text contain in polygon shape.
+             *
+             * @return true/false is the label fit in polygon.
+             * measure if rects points are inside the polygon shape
+             * return true if there is at least 3 point inside the polygon
+             */
+            contains(rect: IRect): boolean;
+            /**
+            * Check if label text is outside of polygon shape.
+            * It checks 8 points in the label. TopLeft, TopCenter, TopRight, MiddleLeft, MiddleRight, BottomLeft, BottomMiddle, BottomRight
+            * @return true/false is there is any conflict (at least one point inside the shape).
+            */
+            conflicts(rect: IRect): boolean;
+            /**
+            * returns intersection point of a line (depicted by two points) and a polygon.
+            *
+            * @return the point of intersection or null if there is no intersection.
+            */
+            lineIntersectionPoint(p0: IPoint, p1: IPoint): IPoint;
+            /**
+             * calculate Polygon Area.
+             *
+             * @return the area of the polygon (as number).
+             */
+            static calculateAbsolutePolygonArea(polygonPoints: IPoint[]): number;
+            /**
+            * Check if label text is outside of polygon bounding box.
+            *
+            * @return true/false is there is any conflict (at least one point inside the shape).
+            */
+            private isConflictWithBoundingBox(rect);
+            /**
+             * Calculate Polygon Centroid.
+             *
+             * @return 'center' point of the polygon.
+             * calculate the polygon area
+             * calculate the average points of the polygon by x & y axis.
+             * divided the average point by the area
+             */
+            private calculatePolygonCentroid();
+            private calculateBoundingRect();
+            /**
+             * Check if point exist inside polygon shape.
+             *
+             * @return true/false if point exist inside shape.
+             * ray-casting algorithm based on:
+             * http://www.ecse.rpi.edu/Homepages/wrf/Research/Short_Notes/pnpoly.html
+             */
+            private inside(point);
+            /**
+             * Checks if a line (presented as two points) intersects with a another line
+             */
+            private getLineIntersection(line0p1, line0p2, line1p1, line1p2);
+            private convertArrayPathToPoints(path);
+        }
         module Rect {
             function getOffset(rect: IRect): IPoint;
             function getSize(rect: IRect): ISize;
