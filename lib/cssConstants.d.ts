@@ -1,6 +1,3 @@
-/**
- * CSS constants.
- */
 export declare module CssConstants {
     interface ClassAndSelector {
         className: string;

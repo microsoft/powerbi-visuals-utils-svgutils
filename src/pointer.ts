@@ -26,27 +26,27 @@
 import {select, Selection, BaseEvent, event, touches} from "d3-selection";
 import {drag} from "d3-drag";
 
-    export function getCoordinates(rootNode: HTMLElement, isPointerEvent: boolean): number[] {
-        let coordinates: number[];
+export function getCoordinates(rootNode: HTMLElement, isPointerEvent: boolean): number[] {
+    let coordinates: number[];
 
-        if (isPointerEvent) {
-            // DO NOT USE - WebKit bug in getScreenCTM with nested SVG results in slight negative coordinate shift
-            // Also, IE will incorporate transform scale but WebKit does not, forcing us to detect browser and adjust appropriately.
-            // Just use non-scaled coordinates for all browsers, and adjust for the transform scale later (see lineChart.findIndex)
-            // coordinates = d3.mouse(rootNode);
+    if (isPointerEvent) {
+        // DO NOT USE - WebKit bug in getScreenCTM with nested SVG results in slight negative coordinate shift
+        // Also, IE will incorporate transform scale but WebKit does not, forcing us to detect browser and adjust appropriately.
+        // Just use non-scaled coordinates for all browsers, and adjust for the transform scale later (see lineChart.findIndex)
+        // coordinates = d3.mouse(rootNode);
 
-            // copied from d3_eventSource (which is not exposed)
-            let e = <MouseEvent>event, s;
-            while (s = (<BaseEvent>e).sourceEvent) e = s;
-            let rect = rootNode.getBoundingClientRect();
-            coordinates = [e.clientX - rect.left - rootNode.clientLeft, e.clientY - rect.top - rootNode.clientTop];
-        }
-        else {
-            let touchCoordinates = touches(rootNode);
-            if (touchCoordinates && touchCoordinates.length > 0) {
-                coordinates = touchCoordinates[0];
-            }
-        }
-
-        return coordinates;
+        // copied from d3_eventSource (which is not exposed)
+        let e = <MouseEvent>event, s;
+        while (s = (<BaseEvent>e).sourceEvent) e = s;
+        let rect = rootNode.getBoundingClientRect();
+        coordinates = [e.clientX - rect.left - rootNode.clientLeft, e.clientY - rect.top - rootNode.clientTop];
     }
+    else {
+        let touchCoordinates = touches(rootNode);
+        if (touchCoordinates && touchCoordinates.length > 0) {
+            coordinates = touchCoordinates[0];
+        }
+    }
+
+    return coordinates;
+}

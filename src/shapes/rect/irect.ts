@@ -24,11 +24,9 @@
  *  THE SOFTWARE.
  */
 
-// declare module powerbi.extensibility.utils.svg {
-    export interface IRect {
-        left: number;
-        top: number;
-        width: number;
-        height: number;
-    }
-// }
+export interface IRect {
+    left: number;
+    top: number;
+    width: number;
+    height: number;
+}

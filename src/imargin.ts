@@ -24,11 +24,9 @@
  *  THE SOFTWARE.
  */
 
-module powerbi.extensibility.utils.svg {
-    export interface IMargin {
-        top: number;
-        bottom: number;
-        left: number;
-        right: number;
-    }
+export interface IMargin {
+    top: number;
+    bottom: number;
+    left: number;
+    right: number;
 }

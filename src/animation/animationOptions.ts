@@ -24,14 +24,7 @@
  *  THE SOFTWARE.
  */
 
-// export module powerbi.extensibility.utils.svg {
-    /** Animation options for visuals. */
-
-    // export module animationOptions {
-
-        export interface AnimationOptions {
-            /** Indicates whether all transition frames should be flushed immediately, effectively "disabling" any visual transitions. */
-            transitionImmediate: boolean;
-        }
-    // }
-// }
+export interface AnimationOptions {
+    /** Indicates whether all transition frames should be flushed immediately, effectively "disabling" any visual transitions. */
+    transitionImmediate: boolean;
+}

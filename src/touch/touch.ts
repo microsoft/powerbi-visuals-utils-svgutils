@@ -24,42 +24,40 @@
  *  THE SOFTWARE.
  */
 
-// module powerbi.extensibility.utils.svg.touch {
-    export function touchStartEventName(): string {
-        let eventName: string = "touchstart";
+export function touchStartEventName(): string {
+    let eventName: string = "touchstart";
 
-        if (window["PointerEvent"]) {
-            // IE11
-            eventName = "pointerdown";
-        }
-
-        return eventName;
+    if (window["PointerEvent"]) {
+        // IE11
+        eventName = "pointerdown";
     }
 
-    export function touchMoveEventName(): string {
-        let eventName: string = "touchmove";
+    return eventName;
+}
 
-        if (window["PointerEvent"]) {
-            // IE11
-            eventName = "pointermove";
-        }
+export function touchMoveEventName(): string {
+    let eventName: string = "touchmove";
 
-        return eventName;
+    if (window["PointerEvent"]) {
+        // IE11
+        eventName = "pointermove";
     }
 
-    export function touchEndEventName(): string {
-        let eventName: string = "touchend";
+    return eventName;
+}
 
-        if (window["PointerEvent"]) {
-            // IE11
-            eventName = "pointerup";
-        }
+export function touchEndEventName(): string {
+    let eventName: string = "touchend";
 
-        return eventName;
+    if (window["PointerEvent"]) {
+        // IE11
+        eventName = "pointerup";
     }
 
-    export function usePointerEvents(): boolean {
-        let eventName = touchStartEventName();
-        return eventName === "pointerdown" || eventName === "MSPointerDown";
-    }
-// }
+    return eventName;
+}
+
+export function usePointerEvents(): boolean {
+    let eventName = touchStartEventName();
+    return eventName === "pointerdown" || eventName === "MSPointerDown";
+}
