@@ -32,7 +32,7 @@
     import Rect = powerbi.extensibility.utils.svg.Rect;
     */
 
-    import {shapes} from "../../src/shapes/shapesInterfaces";
+    import * as shapes from "../../src/shapes/shapesInterfaces";
     import {IRect} from "../../src/shapes/rect/irect";
     import {Rect} from "../../src/shapes/shapes";
 

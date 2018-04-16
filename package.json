@@ -64,6 +64,6 @@
     "d3-drag": "^1.2.1",
     "d3-selection": "^1.2.0",
     "powerbi-visuals-utils-testutils": "git://github.com/Microsoft/powerbi-visuals-utils-testutils.git#c8720825bef1f50acfe4e0e789b1dde889f997c4",
-    "powerbi-visuals-utils-typeutils": "^1.1.0"
+    "powerbi-visuals-utils-typeutils": "Microsoft/powerbi-visuals-utils-typeutils#es2015"
   }
 }
