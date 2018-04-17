@@ -26,19 +26,18 @@
 
 // module powerbi.extensibility.utils.svg {
 import {IRect} from "./irect";
-    export class Rect implements IRect {
-        // Fields
-        public left: number;
-        public top: number;
-        public width: number;
-        public height: number;
+export class Rect implements IRect {
+    // Fields
+    public left: number;
+    public top: number;
+    public width: number;
+    public height: number;
 
-        // Constructor
-        constructor(left?: number, top?: number, width?: number, height?: number) {
-            this.left = left || 0;
-            this.top = top || 0;
-            this.width = width || 0;
-            this.height = height || 0;
-        }
+    // Constructor
+    constructor(left?: number, top?: number, width?: number, height?: number) {
+        this.left = left || 0;
+        this.top = top || 0;
+        this.width = width || 0;
+        this.height = height || 0;
     }
-// }
+}

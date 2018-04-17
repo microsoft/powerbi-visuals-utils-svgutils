@@ -24,49 +24,47 @@
  *  THE SOFTWARE.
  */
 
-// module powerbi.extensibility.utils.svg.touch {
-    export class Point {
-        public x: number;
-        public y: number;
+export class Point {
+    public x: number;
+    public y: number;
 
-        constructor(x?: number, y?: number) {
-            this.x = x || 0;
-            this.y = y || 0;
-        }
-
-        public offset(offsetX: number, offsetY: number) {
-            this.x += offsetX;
-            this.y += offsetY;
-        }
+    constructor(x?: number, y?: number) {
+        this.x = x || 0;
+        this.y = y || 0;
     }
 
-    export class Rectangle extends Point {
-        public width: number;
-        public height: number;
-
-        constructor(x?: number, y?: number, width?: number, height?: number) {
-            super(x, y);
-            this.width = width || 0;
-            this.height = height || 0;
-        }
-
-        get point(): Point {
-            return new Point(this.x, this.y);
-        }
-
-        public contains(p: Point): boolean {
-            return Rectangle.contains(this, p);
-        }
-
-        public static contains(rect: Rectangle, p: Point): boolean {
-            if (p && !Rectangle.isEmpty(rect)) {
-                return rect.x <= p.x && p.x < rect.x + rect.width && rect.y <= p.y && p.y < rect.y + rect.height;
-            }
-            return false;
-        }
-
-        public static isEmpty(rect: Rectangle): boolean {
-            return !(rect !== undefined && rect.width >= 0 && rect.height >= 0);
-        }
+    public offset(offsetX: number, offsetY: number) {
+        this.x += offsetX;
+        this.y += offsetY;
     }
-// }
+}
+
+export class Rectangle extends Point {
+    public width: number;
+    public height: number;
+
+    constructor(x?: number, y?: number, width?: number, height?: number) {
+        super(x, y);
+        this.width = width || 0;
+        this.height = height || 0;
+    }
+
+    get point(): Point {
+        return new Point(this.x, this.y);
+    }
+
+    public contains(p: Point): boolean {
+        return Rectangle.contains(this, p);
+    }
+
+    public static contains(rect: Rectangle, p: Point): boolean {
+        if (p && !Rectangle.isEmpty(rect)) {
+            return rect.x <= p.x && p.x < rect.x + rect.width && rect.y <= p.y && p.y < rect.y + rect.height;
+        }
+        return false;
+    }
+
+    public static isEmpty(rect: Rectangle): boolean {
+        return !(rect !== undefined && rect.width >= 0 && rect.height >= 0);
+    }
+}

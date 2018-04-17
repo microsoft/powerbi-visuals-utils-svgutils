@@ -27,8 +27,6 @@ import { select, Selection } from "d3-selection";
 
 import { Point } from "./shapes/point";
 
-
-
 export class SVGScaleDetector {
     private scaleDetectorElement: SVGRectElement;
 
