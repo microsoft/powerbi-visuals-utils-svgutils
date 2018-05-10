@@ -28,7 +28,7 @@
     "lint": "tslint -r \"node_modules/tslint-microsoft-contrib\"  \"+(src|test)/**/*.ts\""
   },
   "devDependencies": {
-    "@types/powerbi-visuals-tools": "https://github.com/zBritva/-types-powerbi-visuals-tools",
+    "@types/powerbi-visuals-tools": "1.11.0",
     "@types/d3-selection": "^1.2.0",
     "@types/d3-timer": "^1.0.6",
     "@types/jasmine": "^2.8.2",
@@ -64,7 +64,7 @@
   "dependencies": {
     "d3-drag": "^1.2.1",
     "d3-selection": "^1.2.0",
-    "powerbi-visuals-utils-testutils": "zBritva/powerbi-visuals-utils-testutils#es2015",
-    "powerbi-visuals-utils-typeutils": "zBritva/powerbi-visuals-utils-typeutils#es2015"
+    "powerbi-visuals-utils-testutils": "Microsoft/powerbi-visuals-utils-testutils#es2015",
+    "powerbi-visuals-utils-typeutils": "Microsoft/powerbi-visuals-utils-typeutils#es2015"
   }
 }
