@@ -25,11 +25,6 @@
  */
 import { parseTranslateTransform, getTransformScaleRatios } from "../src/manipulation";
 import { select } from "d3-selection";
-
-
-import * as TestUtils from "powerbi-visuals-utils-testutils";
-
-
 import { testDom } from "powerbi-visuals-utils-testutils";
 
 
