@@ -26,9 +26,6 @@
 
 import { select, Selection } from "d3-selection";
 import { SVGScaleDetector } from "../src/scaleDetector";
-import * as JQuery from "jquery";
-
-import * as TestUtils from "powerbi-visuals-utils-testutils";
 import { testDom } from "powerbi-visuals-utils-testutils";
 
 describe("SVGScaleDetector", () => {
