@@ -31,29 +31,16 @@ const tsconfig = require("./tsconfig.json");
 
 import { Config, ConfigOptions } from "karma";
 
-const testRecursivePath = "test/**/*.ts"
-    , srcOriginalRecursivePath = "src/**/*.ts"
-    , srcRecursivePath = "lib/**/*.js"
-    , srcCssRecursivePath = "lib/**/*.css"
-    , coverageFolder = "coverage";
+const testRecursivePath = "test/**/*.ts";
+const srcOriginalRecursivePath = "src/**/*.ts";
+const srcRecursivePath = "lib/**/*.js";
+const srcCssRecursivePath = "lib/**/*.css";
+const coverageFolder = "coverage";
 
+process.env.CHROME_BIN = require("puppeteer").executablePath();
 module.exports = (config: Config) => {
-    let browsers = [];
-
-    if (process.env.TRAVIS) {
-        browsers.push("ChromeTravisCI");
-    } else {
-        browsers.push("Chrome");
-    }
-
     config.set(<ConfigOptions>{
-        customLaunchers: {
-            ChromeTravisCI: {
-                base: "Chrome",
-                flags: ["--no-sandbox"]
-            }
-        },
-        browsers: browsers,
+        browsers: ["ChromeHeadless"],
         colors: true,
         frameworks: ["jasmine"],
         reporters: [
@@ -81,11 +68,23 @@ module.exports = (config: Config) => {
                 pattern: srcOriginalRecursivePath,
                 included: false,
                 served: true
+            },
+            {
+                pattern: "test/images/*.+(png|jpg|gif|svg|bmp)",
+                watched: false,
+                included: false,
+                served: true
+            },
+            {
+                pattern: "test/data/*.txt",
+                watched: false,
+                included: false,
+                served: true
             }
         ],
         preprocessors: {
             [testRecursivePath]: ["webpack"],
-            [srcRecursivePath]: ["webpack", "coverage"]
+            [srcRecursivePath]: ["webpack", "sourcemap", "coverage"]
         },
         typescriptPreprocessor: {
             options: tsconfig.compilerOptions

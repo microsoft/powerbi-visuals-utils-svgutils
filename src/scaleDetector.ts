@@ -23,7 +23,7 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  *  THE SOFTWARE.
  */
-import { select, Selection } from "d3-selection";
+import { Selection } from "d3-selection";
 
 import { Point } from "./shapes/point";
 

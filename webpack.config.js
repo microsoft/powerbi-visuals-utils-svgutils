@@ -25,7 +25,6 @@
  */
 
 const path = require('path');
-const webpack = require("webpack");
 
 module.exports = {
     entry: './src/index.ts',
@@ -44,17 +43,12 @@ module.exports = {
         ]
     },
     externals: {
-        "powerbi-visuals-tools": '{}'
+        "powerbi-visuals-api": '{}'
     },
     resolve: {
         extensions: ['.tsx', '.ts', '.js','.css']
     },
     output: {
         path: path.resolve(__dirname, ".tmp/test")
-    },
-    plugins: [
-        new webpack.ProvidePlugin({
-            'powerbi-visuals-tools': null
-          })
-    ]
+    }
 };
