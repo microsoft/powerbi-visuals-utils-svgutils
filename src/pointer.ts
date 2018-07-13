@@ -23,8 +23,7 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  *  THE SOFTWARE.
  */
-import {select, Selection, BaseEvent, event, touches} from "d3-selection";
-import {drag} from "d3-drag";
+import { BaseEvent, event, touches} from "d3-selection";
 
 export function getCoordinates(rootNode: HTMLElement, isPointerEvent: boolean): number[] {
     let coordinates: number[];

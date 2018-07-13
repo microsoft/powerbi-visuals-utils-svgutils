@@ -28,7 +28,6 @@
     "lint": "tslint -r \"node_modules/tslint-microsoft-contrib\"  \"+(src|test)/**/*.ts\""
   },
   "devDependencies": {
-    "@types/powerbi-visuals-tools": "1.11.0",
     "@types/d3-selection": "^1.2.0",
     "@types/d3-timer": "^1.0.6",
     "@types/jasmine": "^2.8.2",
@@ -60,12 +59,13 @@
     "typescript": "^2.5.3",
     "webpack": "^3.8.1",
     "webpack-node-externals": "^1.6.0",
-    "karma-typescript": "^3.0.12"
+    "karma-typescript": "^3.0.12",
+    "puppeteer": "^1.5.0"
   },
   "dependencies": {
     "d3-drag": "^1.2.1",
     "d3-selection": "^1.2.0",
-    "powerbi-visuals-utils-testutils": "^2.0.0",
-    "powerbi-visuals-utils-typeutils": "^2.0.0"
+    "powerbi-visuals-utils-testutils": "2.0.3",
+    "powerbi-visuals-utils-typeutils": "2.0.1"
   }
 }
