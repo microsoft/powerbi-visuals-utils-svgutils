@@ -1,6 +1,6 @@
 {
   "name": "powerbi-visuals-utils-svgutils",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "powerbi-visuals-utils-svgutils",
   "main": "lib/index",
   "types": "lib/index",
@@ -28,8 +28,7 @@
     "lint": "tslint -r \"node_modules/tslint-microsoft-contrib\"  \"+(src|test)/**/*.ts\""
   },
   "devDependencies": {
-    "@types/d3-selection": "^1.2.0",
-    "@types/d3-timer": "^1.0.6",
+    "@types/d3": "5.0.0",
     "@types/jasmine": "^2.8.2",
     "@types/jasmine-jquery": "^1.5.32",
     "@types/jquery": "^3.2.1",
@@ -63,8 +62,7 @@
     "puppeteer": "^1.5.0"
   },
   "dependencies": {
-    "d3-drag": "^1.2.1",
-    "d3-selection": "^1.2.0",
+    "d3": "5.5.0",
     "powerbi-visuals-utils-testutils": "2.0.3",
     "powerbi-visuals-utils-typeutils": "2.0.1"
   }
