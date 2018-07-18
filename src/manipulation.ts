@@ -25,9 +25,9 @@
  */
 
 
-import {timerFlush} from "d3-timer";
-import {AnimationOptions} from "./animation/animationOptions";
-import {Point} from "./shapes/point";
+import { timerFlush } from "d3-timer";
+import { AnimationOptions } from "./animation/animationOptions";
+import { Point } from "./shapes/point";
 
 /**
  * Very small values, when stringified, may be converted to scientific notation and cause a temporarily
