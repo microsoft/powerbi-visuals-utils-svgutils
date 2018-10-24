@@ -4,4 +4,3 @@ node_modules
 typings
 /coverage
 /lib
-package-lock.json
