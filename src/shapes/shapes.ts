@@ -28,7 +28,7 @@
 
 import { double as Double } from "powerbi-visuals-utils-typeutils";
 
-import {IRect} from "./rect/irect";
+import { IRect } from "./rect/irect";
 
 import { IPoint, ISize, IThickness } from "./shapesInterfaces";
 
