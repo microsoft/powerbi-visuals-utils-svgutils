@@ -24,14 +24,14 @@
  *  THE SOFTWARE.
  */
 
-import { select, Selection } from "d3-selection";
+import { select } from "d3-selection";
 import { SVGScaleDetector } from "../src/scaleDetector";
 import { testDom } from "powerbi-visuals-utils-testutils";
 
 describe("SVGScaleDetector", () => {
     let scaleDetector: SVGScaleDetector;
     let element: JQuery;
-    let svg: Selection<any, any, any, any>;
+    let svg: d3.Selection<any, any, any, any>;
 
     const tolerance = 4;  // decimal points of precision
 

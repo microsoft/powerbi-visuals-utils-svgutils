@@ -23,7 +23,7 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  *  THE SOFTWARE.
  */
-import { BaseEvent, event, touches } from "d3-selection";
+import { touches } from "d3-selection";
 
 export function getCoordinates(rootNode: HTMLElement, isPointerEvent: boolean): number[] {
     let coordinates: number[];
@@ -35,8 +35,11 @@ export function getCoordinates(rootNode: HTMLElement, isPointerEvent: boolean): 
         // coordinates = d3.mouse(rootNode);
 
         // copied from d3_eventSource (which is not exposed)
-        let e = <MouseEvent>event, s;
-        while (s = (<BaseEvent>e).sourceEvent) e = s;
+        let e = <MouseEvent>require("d3-selection").event;
+        let s;
+        while (s = (<d3.BaseEvent>e).sourceEvent) {
+            e = s;
+        }
         let rect = rootNode.getBoundingClientRect();
         coordinates = [e.clientX - rect.left - rootNode.clientLeft, e.clientY - rect.top - rootNode.clientTop];
     }
