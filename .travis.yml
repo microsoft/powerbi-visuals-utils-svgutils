@@ -4,7 +4,7 @@ sudo: required
 dist: trusty
 language: node_js
 node_js:
-  - "7"
+  - "10"
 before_install:
   - sudo apt-get install -y chromium-browser
   - export CHROME_BIN=chromium-browser
