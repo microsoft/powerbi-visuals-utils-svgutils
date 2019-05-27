@@ -24,14 +24,14 @@
  *  THE SOFTWARE.
  */
 
-module powerbi.extensibility.utils.svg {
-    export class Point implements shapes.IPoint {
-        public x: number;
-        public y: number;
+import { IPoint } from "./shapesInterfaces";
 
-        constructor(x?: number, y?: number) {
-            this.x = x || 0;
-            this.y = y || 0;
-        }
+export class Point implements IPoint {
+    public x: number;
+    public y: number;
+
+    constructor(x?: number, y?: number) {
+        this.x = x || 0;
+        this.y = y || 0;
     }
 }
