@@ -30,14 +30,14 @@ import { testDom } from "powerbi-visuals-utils-testutils";
 
 describe("SVGScaleDetector", () => {
     let scaleDetector: SVGScaleDetector;
-    let element: JQuery;
+    let element: HTMLElement;
     let svg: d3.Selection<any, any, any, any>;
 
     const tolerance = 4;  // decimal points of precision
 
     beforeEach(() => {
         element = testDom("100", "100");
-        svg = select(element.get(0)).append("svg");
+        svg = select(element).append("svg");
     });
 
     it("no scale", () => {
@@ -49,7 +49,7 @@ describe("SVGScaleDetector", () => {
     });
 
     it("tiny scale", () => {
-        element.css("transform", "scale(0.0001)");
+        element.style.transform = "scale(0.0001)";
         scaleDetector = new SVGScaleDetector(svg);
 
         let scale = scaleDetector.getScale();
@@ -58,7 +58,7 @@ describe("SVGScaleDetector", () => {
     });
 
     it("huge scale", () => {
-        element.css("transform", "scale(1000.0)");
+        element.style.transform = "scale(1000.0)";
         scaleDetector = new SVGScaleDetector(svg);
 
         let scale = scaleDetector.getScale();

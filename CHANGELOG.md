@@ -1,3 +1,8 @@
+## 2.3.0
+* Packages update
+* Vulnerabilities fixes
+* Tests adapted to v.2.3.1 of testutils
+
 ## 2.2.1
 * Packages update
 

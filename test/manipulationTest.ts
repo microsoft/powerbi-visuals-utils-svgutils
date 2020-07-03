@@ -57,9 +57,9 @@ describe("SvgUtil tests", () => {
     });
 
     it("get transform scale ratios under parent scope", (done) => {
-        let jqDiv = testDom("500", "500");
-        jqDiv.css("transform", "scale(0.75,0.5)");
-        let svg = select(jqDiv[0]).append("svg")
+        let div = testDom("500", "500");
+        div.style.transform = "scale(0.75,0.5)";
+        let svg = select(div).append("svg")
             .attr("width", 350)
             .attr("height", 200).style("position", "absolute");
         let g = svg.append("g"); // the axisGraphicsContext
