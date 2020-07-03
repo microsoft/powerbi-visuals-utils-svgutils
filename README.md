@@ -5,7 +5,6 @@
 
 ## Usage
 Learn how to install and use the SVGUtils in your custom visuals:
-* [Installation Guide](./docs/usage/installation-guide.md)
 * [Usage Guide](./docs/usage/usage-guide.md)
 
 ## Contributing
