@@ -5,8 +5,7 @@
 
 ## Usage
 Learn how to install and use the SVGUtils in your custom visuals:
-* [Installation Guide](./docs/usage/installation-guide.md)
-* [Usage Guide](./docs/usage/usage-guide.md)
+* [Usage Guide](https://docs.microsoft.com/en-us/power-bi/developer/visuals/utils-svg)
 
 ## Contributing
 * Read our [contribution guideline](./CONTRIBUTING.md) to find out how to contribute bugs fixes and improvements
