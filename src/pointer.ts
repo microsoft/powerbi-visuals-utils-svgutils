@@ -23,9 +23,9 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  *  THE SOFTWARE.
  */
-import { touches } from "d3-selection";
+import { pointers } from "d3-selection";
 
-export function getCoordinates(rootNode: HTMLElement, isPointerEvent: boolean): number[] {
+export function getCoordinates(event, rootNode: HTMLElement, isPointerEvent: boolean): number[] {
     let coordinates: number[];
 
     if (isPointerEvent) {
@@ -35,16 +35,19 @@ export function getCoordinates(rootNode: HTMLElement, isPointerEvent: boolean): 
         // coordinates = d3.mouse(rootNode);
 
         // copied from d3_eventSource (which is not exposed)
-        let e = <MouseEvent>require("d3-selection").event;
+        let e = <MouseEvent>event;
         let s;
-        while (s = (<d3.BaseEvent>e).sourceEvent) {
+        while (s = (<any>e).sourceEvent) {
             e = s;
         }
         let rect = rootNode.getBoundingClientRect();
-        coordinates = [e.clientX - rect.left - rootNode.clientLeft, e.clientY - rect.top - rootNode.clientTop];
+        coordinates = [
+            e.clientX - rect.left - rootNode.clientLeft,
+            e.clientY - rect.top - rootNode.clientTop
+        ];
     }
     else {
-        let touchCoordinates = touches(rootNode);
+        let touchCoordinates = pointers(event);
         if (touchCoordinates && touchCoordinates.length > 0) {
             coordinates = touchCoordinates[0];
         }
