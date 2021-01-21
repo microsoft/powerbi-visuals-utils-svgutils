@@ -1,3 +1,6 @@
+## 2.3.2
+* splitted d3 libriary
+
 ## 2.3.1
 * Packages update
 * Vulnerabilities fixes
