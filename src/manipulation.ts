@@ -99,7 +99,7 @@ export function transformOrigin(xOffset: string, yOffset: string): string {
  * These flickers are noticable on IE, and with a large number of webviews(not recommend you ever do this) on iOS.
  */
 export function flushAllD3Transitions() {
-    let now = Date.now;
+    const now = Date.now;
     Date.now = function () { return Infinity; };
     timerFlush();
     Date.now = now;
@@ -112,7 +112,7 @@ export function flushAllD3TransitionsIfNeeded(options: AnimationOptions) {
     if (!options)
         return;
 
-    let animationOptions: AnimationOptions = <AnimationOptions>options;
+    const animationOptions: AnimationOptions = <AnimationOptions>options;
 
     if (animationOptions && animationOptions.transitionImmediate) {
         flushAllD3Transitions();
@@ -153,18 +153,18 @@ export function parseTranslateTransform(input: string): { x: string; y: string }
             y: "0",
         };
     }
-    let translateCoordinates = input.split(/[\s,]+/);
+    const translateCoordinates = input.split(/[\s,]+/);
 
     let yValue = "0";
     let xValue: string;
-    let xCoord = translateCoordinates[0];
+    const xCoord = translateCoordinates[0];
 
     // Y coordinate is ommited in I.E if it is 0, so need to check against that
     if (translateCoordinates.length === 1) {
         // 10 refers to the length of "translate("
         xValue = xCoord.substring(10, xCoord.length - 1);
     } else {
-        let yCoord = translateCoordinates[1];
+        const yCoord = translateCoordinates[1];
         yValue = yCoord.substring(0, yCoord.length - 1);
         // 10 refers to the length of "translate("
         xValue = xCoord.substring(10, xCoord.length);
@@ -180,7 +180,7 @@ export function parseTranslateTransform(input: string): { x: string; y: string }
  * Create an arrow.
  */
 export function createArrow(width: number, height: number, rotate: number): { path: string; transform: string } {
-    let transform = "rotate(" + rotate + " " + width / 2 + " " + height / 2 + ")";
+    const transform = "rotate(" + rotate + " " + width / 2 + " " + height / 2 + ")";
     let path = "M0 0";
     path += "L0 " + height;
     path += "L" + width + " " + height / 2 + " Z";
@@ -196,8 +196,8 @@ export function createArrow(width: number, height: number, rotate: number): { pa
  */
 export function getTransformScaleRatios(svgElement: SVGSVGElement): Point {
     if (svgElement != null) {
-        let scaledRect = svgElement.getBoundingClientRect();
-        let domRect = svgElement.getBBox();
+        const scaledRect = svgElement.getBoundingClientRect();
+        const domRect = svgElement.getBBox();
         if (domRect.height > 0 && domRect.width > 0) {
             return {
                 x: scaledRect.width / domRect.width,
