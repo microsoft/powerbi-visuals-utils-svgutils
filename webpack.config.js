@@ -41,7 +41,7 @@ module.exports = {
                 enforce: 'post',
                 include: /(src)/,
                 exclude: /(node_modules|resources\/js\/vendor)/,
-                loader: 'istanbul-instrumenter-loader',
+                loader: 'coverage-istanbul-loader',
                 options: { esModules: true }
             },
             {
@@ -57,6 +57,6 @@ module.exports = {
         extensions: ['.tsx', '.ts', '.js','.css']
     },
     output: {
-        path: path.resolve(__dirname, ".tmp/test")
+        path: path.resolve(__dirname, ".tmp")
     }
 };

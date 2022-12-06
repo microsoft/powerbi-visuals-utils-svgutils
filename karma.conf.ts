@@ -29,16 +29,14 @@
 const webpackConfig = require("./webpack.config.js");
 const tsconfig = require("./tsconfig.json");
 
-import { Config, ConfigOptions } from "karma";
-
 const testRecursivePath = "test/**/*.ts";
 const srcOriginalRecursivePath = "src/**/*.ts";
 const srcRecursivePath = "lib/**/*.js";
 const coverageFolder = "coverage";
 
-process.env.CHROME_BIN = require("puppeteer").executablePath();
-module.exports = (config: Config) => {
-    config.set(<ConfigOptions>{
+process.env.CHROME_BIN = require("playwright").chromium.executablePath();
+module.exports = (config) => {
+    config.set({
         browsers: ["ChromeHeadless"],
         colors: true,
         frameworks: ["jasmine"],
@@ -53,7 +51,6 @@ module.exports = (config: Config) => {
         },
         singleRun: true,
         plugins: [
-            "karma-remap-istanbul",
             "karma-coverage",
             "karma-typescript",
             "karma-webpack",
@@ -63,8 +60,6 @@ module.exports = (config: Config) => {
             "karma-coverage-istanbul-reporter"
         ],
         files: [
-            "node_modules/jquery/dist/jquery.min.js",
-            "node_modules/jasmine-jquery/lib/jasmine-jquery.js",
             srcRecursivePath,
             testRecursivePath,
             {

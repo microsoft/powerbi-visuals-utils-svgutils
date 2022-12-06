@@ -42,8 +42,8 @@ export class SVGScaleDetector {
     }
 
     public getScale(): Point {
-        let scaledRect = this.scaleDetectorElement.getBoundingClientRect();
-        let domRect = this.scaleDetectorElement.getBBox();
+        const scaledRect = this.scaleDetectorElement.getBoundingClientRect();
+        const domRect = this.scaleDetectorElement.getBBox();
         if (domRect.height > 0 && domRect.width > 0) {
             return {
                 x: scaledRect.width / domRect.width,
