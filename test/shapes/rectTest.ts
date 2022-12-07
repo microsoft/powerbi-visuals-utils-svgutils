@@ -25,7 +25,7 @@
 */
 import * as shapes from "../../src/shapes/shapesInterfaces";
 import {IRect} from "../../src/shapes/rect/irect";
-import {Rect} from "../../src/shapes/shapes";
+import * as Rect from "../../src/shapes/shapes";
 
 describe("Rect tests", () => {
     function AreRectsEqual(rectA, rectB): boolean {
