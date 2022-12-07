@@ -26,7 +26,7 @@ jobs:
         npm run build
         npm run test
         npm run lint
-    - run: zip -r release.zip lib LICENSE package-lock.json package.json *.md
+    - run: zip -r release.zip lib LICENSE package-lock.json package.json *.md -x 'lib/src/*' 'lib/test/*'
     - name: Upload production artifacts
       run: |
         gh release upload $TAG_NAME "release.zip#release"
