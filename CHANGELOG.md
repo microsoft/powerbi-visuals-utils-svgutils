@@ -1,3 +1,9 @@
+## 3.0.0
+* Migrated to ESlint
+* Migrated to Playwright
+* Packages update
+* Vulnerabilities fixes
+
 ## 2.3.2
 * splitted d3 libriary
 
