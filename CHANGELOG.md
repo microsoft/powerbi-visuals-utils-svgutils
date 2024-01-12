@@ -1,5 +1,6 @@
 ## 6.0.2
 * Vulnerabilities patched
+* Packages update
 
 ## 6.0.1
 * Packages update
