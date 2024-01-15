@@ -1,3 +1,6 @@
+## 6.0.3
+* Update powerbi-visuals-utils-testutils to 6.0.3
+
 ## 6.0.2
 * Vulnerabilities patched
 * Packages update
