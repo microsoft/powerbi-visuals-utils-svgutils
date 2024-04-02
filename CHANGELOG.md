@@ -1,3 +1,6 @@
+## 6.0.4
+* powerbi-visuals-api update to 5.9.0
+
 ## 6.0.3
 * Update powerbi-visuals-utils-testutils to 6.0.3
 
