@@ -29,7 +29,7 @@ Common scripts:
 
 ### Tests
 
-Tests live under `test/` and run on Vitest with `happy-dom` (configured in `vitest.config.mts`).
+Tests live under `test/` and run on Vitest in browser mode using Playwright (headless Chromium, configured in `vitest.config.mts`).
 
 ## Contributing
 * Read our [contribution guideline](./CONTRIBUTING.md) to find out how to contribute bugs fixes and improvements

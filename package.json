@@ -1,6 +1,6 @@
 {
   "name": "powerbi-visuals-utils-svgutils",
-  "version": "7.0.0",
+  "version": "7.1.0",
   "description": "powerbi-visuals-utils-svgutils",
   "main": "lib/index.js",
   "module": "lib/index.js",
@@ -43,14 +43,16 @@
     "@types/node": "^26.1.0",
     "@typescript-eslint/eslint-plugin": "^8.62.1",
     "@typescript-eslint/parser": "^8.62.1",
-    "@vitest/coverage-v8": "^4.1.9",
+    "@vitest/browser": "^4.1.10",
+    "@vitest/browser-playwright": "^4.1.10",
+    "@vitest/coverage-v8": "^4.1.10",
     "eslint": "^10.6.0",
     "eslint-plugin-powerbi-visuals": "^1.1.1",
-    "happy-dom": "^20.10.6",
+    "playwright": "^1.61.1",
     "powerbi-visuals-api": "^5.11.0",
     "powerbi-visuals-utils-testutils": "^7.0.1",
     "typescript": "^6.0.3",
-    "vitest": "^4.1.9"
+    "vitest": "^4.1.10"
   },
   "dependencies": {
     "d3-selection": "^3.0.0",

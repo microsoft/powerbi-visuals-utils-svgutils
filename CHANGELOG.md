@@ -1,3 +1,12 @@
+## 7.1.0
+
+### Changed
+* Unit tests migrated from `happy-dom` to Vitest browser mode (Playwright, headless Chromium).
+* Restored real CSS `transform`-based measurements in scale/manipulation tests instead of mocked `getBBox`/`getBoundingClientRect`.
+
+### Infrastructure
+* CI workflows install the Playwright Chromium browser before running tests.
+
 ## 7.0.0
 
 ### Breaking changes

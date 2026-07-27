@@ -33,12 +33,6 @@ describe("SVGScaleDetector", () => {
     let element: HTMLElement;
     let svg: Selection<SVGRectElement, any, any, any>;
 
-    function setMockedScale(x: number, y: number): void {
-        const scaleElement = (scaleDetector as any).scaleDetectorElement as SVGRectElement;
-        scaleElement.getBoundingClientRect = () => ({ width: x, height: y } as DOMRect);
-        scaleElement.getBBox = () => ({ width: 1, height: 1 } as SVGRect);
-    }
-
     const tolerance = 4;  // decimal points of precision
 
     beforeEach(() => {
@@ -48,7 +42,6 @@ describe("SVGScaleDetector", () => {
 
     it("no scale", () => {
         scaleDetector = new SVGScaleDetector(svg);
-        setMockedScale(1, 1);
 
         let scale = scaleDetector.getScale();
         expect(scale.x).toBeCloseTo(1.0, tolerance);
@@ -56,8 +49,8 @@ describe("SVGScaleDetector", () => {
     });
 
     it("tiny scale", () => {
+        element.style.transform = "scale(0.0001)";
         scaleDetector = new SVGScaleDetector(svg);
-        setMockedScale(0.0001, 0.0001);
 
         let scale = scaleDetector.getScale();
         expect(scale.x).toBeCloseTo(0.0001, tolerance);
@@ -65,8 +58,8 @@ describe("SVGScaleDetector", () => {
     });
 
     it("huge scale", () => {
+        element.style.transform = "scale(1000.0)";
         scaleDetector = new SVGScaleDetector(svg);
-        setMockedScale(1000.0, 1000.0);
 
         let scale = scaleDetector.getScale();
         expect(scale.x).toBeCloseTo(1000.0, tolerance);
